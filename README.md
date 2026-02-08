@@ -1,41 +1,57 @@
 # Ex02 Django ORM Web Application
 
-# Reg no:212223240003
-# Name:AKASH M
-# AIM
-To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
+## AIM
+To develop a Django application to store and retrieve data from a Movies Database using Object Relational Mapping(ORM).
 
-# ENTITY RELATIONSHIP DIAGRAM
+## ENTITY RELATIONSHIP DIAGRAM
+
+
+
 ## DESIGN STEPS
-## STEP 1:
+
+### STEP 1:
 Clone the problem from GitHub
 
-## STEP 2:
+### STEP 2:
 Create a new app in Django project
 
-## STEP 3:
+### STEP 3:
 Enter the code for admin.py and models.py
 
-## STEP 4:
+### STEP 4:
 Execute Django admin and create details for 10 books
 
-# PROGRAM
-```
-models.py
+## PROGRAM
 
-from django.db import models from django.contrib import admin class loan (models.Model): loan_id=models.IntegerField(primary_key=True) loan_type =models.CharField(max_length=30) loan_amnt =models.FloatField() cust_acntno =models.IntegerField() cust_name=models.CharField(max_length=50)
+### models.py
+~~~
 
-class loanadmin(admin.ModelAdmin): list_display=('loan_id','loan_type','loan_amnt','cust_acntno','cust_name')
+from django.db import models
+from django.contrib import admin
+class Movie(models.Model):
+mid=models.IntegerField()
+    mname=models.CharField(max_length=100)
+    collection=models.IntegerField()
+    year=models.IntegerField()
+    rating=models.FloatField()
 
-admins.py
+class MovieAdmin(admin.ModelAdmin):
+    list_display=('mid','mname','collection','year','rating')
+
+`
+### admin.py
 
 from django.contrib import admin
-from .models import loan,loanadmin
-admin.site.register(loan,loanadmin)
-```
-# OUTPUT
+from .models import Movie,MovieAdmin
+admin.site.register(Movie,MovieAdmin)
 
-![438606268-6f69917a-9c0d-404d-a46d-7880455a196f](https://github.com/user-attachments/assets/fd631bb5-7350-425e-bab5-0bd5bdf9ae49)
+~~~
 
-# RESULT
-Thus the program for creating a database using ORM hass been executed successfully
+## OUTPUT
+
+![WhatsApp Image 2025-04-15 at 10 18 38_929bfc69](https://github.com/user-attachments/assets/25e33582-d5d4-4363-ad72-9bcdffa68697)
+
+
+
+## RESULT
+Thus the program for creating movies database using ORM hass been executed successfully
